@@ -1,0 +1,19 @@
+--> Jwt token based authentication :- Jwt stand for JSON Web Token.It is just like a standard method.It work on public/private key pair.
+  -> It is used to authenticate request between 2 parties.
+  -> JWT is a encoaded string which contain three partes seperated with .sign. Three parts are Header, Payload and Verify signature.
+    -> format of jwt is like 
+    asda78HGH.asdaR.asdauu88er
+    -> Bearer Token , we can pass the token through header .
+         tymon/jwt-auth 
+         -> Token with a Secret Key 
+         composer require tymon/jwt-auth 
+         -> register the library app.php 
+         'providers' => [
+              Tymon\JWTAuth\Providers\LaravelServiceProvider::class,
+         ]
+         --> publish JWT config file using the command 
+         php artisan vender:publish --provider="Tymon\JWTAuth\Providers\LaravelServiceProvider"
+         copy jwt.php file from vendor to config folder 
+         --> we need to generate secret token 
+         php artisan jwt:secret
+           --> generate in .env 
